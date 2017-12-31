@@ -14,6 +14,7 @@ before_script:
   - export DATABASE_TEST_URL=postgresql://postgres:@localhost/users_test
   - psql -c 'create database users_test;' -U postgres
   - python manage.py recreate_db
+  - python manage.py seed_db
 
 script:
   - python manage.py test
